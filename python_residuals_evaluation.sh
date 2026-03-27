@@ -12,7 +12,8 @@
 # -------------------------
 # Parameters
 # -------------------------
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+SCRIPT_DIR=${SCRIPT_DIR}
+echo $SCRIPT_DIR
 SCRIPT1=$SCRIPT_DIR/01_SVI.py
 SCRIPT2=$SCRIPT_DIR/01_SVI_OD.py
 export BATCH_DIR=${BATCH_DIR:-data}

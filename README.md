@@ -78,15 +78,15 @@ uv run 00_create_underlying_truth.py
 **Step 1: Submit a procedure** (e.g. ED, UD, RD, PD, OD):
 
 ```bash
-DESIGN=ED sbatch python_residuals_evaluation.sh
-DESIGN=UD sbatch python_residuals_evaluation.sh
-DESIGN=RD sbatch python_residuals_evaluation.sh
-DESIGN=PD sbatch python_residuals_evaluation.sh
-OD=1 sbatch python_residuals_evaluation.sh
+sbatch --export=DESGIN=ED,SCRIPT_DIR=$(pwd) python_residuals_evaluation.sh
+sbatch --export=DESGIN=UD,SCRIPT_DIR=$(pwd) python_residuals_evaluation.sh
+sbatch --export=DESGIN=RD,SCRIPT_DIR=$(pwd) python_residuals_evaluation.sh
+sbatch --export=DESGIN=PD,SCRIPT_DIR=$(pwd) python_residuals_evaluation.sh
+sbatch --export=OD=1,SCRIPT_DIR=$(pwd) python_residuals_evaluation.sh
 ```
 
 
-Job output logs go to `res_outfiles/res_<jobid>_<seed>.out/err`. 
+Job output logs go to `<BATCH_DIR>/data/res_outfiles/res_<jobid>_<seed>.out/err`. 
 
 **Step 2–3:** After all jobs complete, run locally or on the cluster:
 
