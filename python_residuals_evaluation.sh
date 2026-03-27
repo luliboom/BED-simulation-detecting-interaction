@@ -6,8 +6,8 @@
 #SBATCH --mem-per-cpu=4G
 #SBATCH --time=144:00:00
 #SBATCH --array=1-1000
-#SBATCH --output=res_outfiles/res_%A_%a.out
-#SBATCH --error=res_outfiles/res_%A_%a.err
+#SBATCH --output=data/res_outfiles/res_%A_%a.out
+#SBATCH --error=data/res_outfiles/res_%A_%a.err
 
 # -------------------------
 # Parameters
@@ -20,7 +20,7 @@ SEED=$SLURM_ARRAY_TASK_ID
 DESIGN=${DESIGN:-ED}   # default ED
 OD=${OD:-0}
 
-mkdir -p res_outfiles
+mkdir -p data/res_outfiles
 
 echo "======================================"
 echo "Running on host: $(hostname)"
