@@ -1,0 +1,21 @@
+[project]
+name = "pyro"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = "==3.13.2"
+dependencies = [
+    "matplotlib>=3.10.6",
+    "numpy>=2.3.3",
+    "pyro-ppl==1.9.1",
+    "scipy>=1.0",
+    "torch>=2.8.0",
+]
+
+[dependency-groups]
+dev = [
+    "pyro",
+]
+
+[tool.uv.sources]
+pyro = { workspace = true }
